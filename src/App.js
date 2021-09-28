@@ -8,23 +8,17 @@ const App = () => {
   const [weather, setWeather] = useState({});
 
   const search = (e) => {
-
     if(e.key === "Enter"){
       fetch(`${API_DATA.base}weather?q=${query}&units=metric&APPID=${API_DATA.key}`)
       .then(res => res.json())
       .then(result => {
-
         setWeather(result)
         setQuery("")})
-
     }
-
   }
   
   return (
-
     <div className="App">
-
       <div className="search-box">
         <input type="text" className="search-bar" placeholder="Search" value={query} 
         onChange={e => setQuery(e.target.value)} 
@@ -49,9 +43,8 @@ const App = () => {
         </div>
 
         ) : ('')}
-
+        
       </div>
-
     )
 }
 
